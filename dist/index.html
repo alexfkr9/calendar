@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>Date picker on pure js</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+
+  </head>
+  <script src="bundle.js"></script>
+<body>
+
+  <div class="container">
+     <!--  Basic calendar view -->
+    <div id="basicview" class="basicview">
+
+      
+          <!-- Выбор участвиков встречи -->
+      <div class="row">   
+        <div class="title">Calendar</div>
+        <div class="nav">
+          <select id="filterPerson" onchange="filterPerson(this.value)" >
+            <option selected>All members</option>
+            <option value="Maria">Maria</option>
+            <option value="Bob">Bob</option>
+            <option value="Alex">Alex</option>      
+          </select>
+            <!-- Создание новой встречи -->        
+          <button onclick="newEvent()">New event +</button>
+        </div>  
+      </div>
+    
+      <table id="calendar" class="calendar">      
+      </table>
+
+    </div>
+
+
+      <!-- Creating new event  -->
+    <div id="createNewEvent" class="creatingNewEvent">
+
+      <div id="failed">Failed to create an event. Time slot is already booked.</div>
+
+      <label>Name of the event:</label>
+      <input id="nameEvent" type="text" class="" />      
+             
+      <br>     
+      <label>Participants:</label>
+      <select id="participants" class="form-select form-select-lg mb-3">
+        <option selected>Maria</option>
+        <option value="Maria">Maria</option>
+        <option value="Bob">Bob</option>
+        <option value="Alex">Alex</option>      
+      </select>      
+
+      <br>    
+      <label>Day:</label>
+      <select id="day" class="form-select form-select-lg mb-3">
+        <option selected>Mon</option>
+        <option value="Mon">Mon</option>
+        <option value="Tue">Tue</option>
+        <option value="Wed">Wed</option>
+        <option value="Thu">Thu</option>
+        <option value="Fri">Fri</option>
+      </select>      
+
+      <br>
+      <label>Time:</label>
+      <select id="time" class="form-select form-select-lg mb-3">
+        <option selected>10:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00">12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+      </select>
+
+      <br>
+      <button onclick="goToBasicView()">Cancel</button>
+      <button id="btnCreate" onclick="saveEvent()" >Create</button>
+
+    </div>
+
+    <div id="delEvent" class="delEvent">
+      Are you sure you want to delete "Rrtrospective" event?
+      <button class="" 
+        onclick="document.getElementById('delEvent').style.display = 'none'">No
+      </button>
+      <button id="delBtn" class="">Yes</button>
+    </div>
+  </div>
+</body>
+
+
+
+
+  
+</html>
