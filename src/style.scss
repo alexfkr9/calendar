@@ -1,0 +1,102 @@
+	    
+      $primary-color: #eee;
+
+
+      .title {        
+        float: left;
+        margin: 10px;
+        padding: 5px 30px;
+      }
+
+      .nav {
+        float: right;
+        margin: 10px;
+      }
+
+      .calendar {
+        width: 100%;
+        font: monospace;
+        line-height: 1.8em;
+        font-size: 15px;
+        text-align: center;
+      }
+      
+      #calendar tbody tr:first-child {        
+        color: #060;
+        background-color: $primary-color;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+      }      
+
+      #calendar tbody tr td:nth-child(1) {
+        color: #117;
+        font-size: 18px;
+      }       
+
+      td {        
+        text-align: center;        
+        max-width: 50px;        
+        overflow: auto;                
+      }
+
+      td:hover {        
+        background-color: $primary-color;        
+      }
+
+      i {
+        cursor: pointer;
+      }   
+
+      input {
+        margin: 10px;
+        padding: 5px;
+      }
+
+      button {
+        padding: 5px;
+        min-width: 30px;        
+      }
+
+      .btn-primary {
+        padding: 5px;        
+      }
+
+      .basicView {
+        margin: 30px;
+      }
+
+      .creatingNewEvent {
+        display: none;                
+      }
+
+      .bord {
+        border: 6px solid red;
+      }
+
+      #failed {
+        display: none;
+        color: red;
+        background: #fee;
+      }
+
+      .delEvent {
+        display: none;
+        position: absolute;
+        top: 130px;
+        margin-left: 30%;                     
+        width: 400px;
+        height: 200px;       
+        background: #fee;
+        border-width: 1px;
+      }
+
+      .delEvent {
+          h6 {
+            color: #a00;
+            padding: 20px;
+          }       
+          button {
+              padding: 5px 30px;
+          }
+      }  

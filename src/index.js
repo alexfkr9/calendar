@@ -1,4 +1,4 @@
-import './style.css';
+import './style.scss';
 
 
 let allMembers = [];
@@ -21,7 +21,7 @@ let hour = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:0
 
 let result = '';
 
-result += '<tbody class="">';
+result += '<tbody>';
 
 for(let i=0; i<10; ++i) {
   result += '<tr>';
@@ -46,14 +46,14 @@ result += '</tbody>';
 document.getElementById('calendar').innerHTML = result;
 
 
-window.newEvent = function() {
-  basicView.style.display = "none";
-  createNewEvent.style.display = "block";
+window.newEvent = function() { 
+  basicView.style.display = "none";  
+  createNewEvent.style.display = "block";  
 }
 
 
 window.saveEvent = function() {
-  //  get data from form new event
+  //  get data from form 'new event'
   let nameEvent = document.getElementById('nameEvent');
   let participants = document.getElementById('participants');
   let day = document.getElementById('day');
@@ -92,7 +92,8 @@ function createArr(tabId) {
   document.getElementById(tabId).style.visibility = "visible";
 
   result += '<span>' + nameEvent.value + '</span>';
-  result += `<span id="${tabId}" onclick="delConfirm(id)">X</span>`;
+  result += '<span>&nbsp;&nbsp;</span>';
+  result += `<span id="${tabId}" onclick="delConfirm(id)"><i class="fas fa-trash-alt"></i></span>`;
 
   document.getElementById(tabId).innerHTML = result;
 }
@@ -104,21 +105,20 @@ window.goToBasicView = function() {
 }
 
 // Delete event
-function delConfirm(id) {
+window.delConfirm = function (id) {
   document.getElementById('delEvent').style.display = "block";
-  document.getElementById("delBtn").addEventListener("click", delEvent2);
+  document.getElementById("delBtn").addEventListener("click", delEvent);
 
-  function delEvent2() {
+  function delEvent() {
     document.getElementById(id).style.visibility = "hidden";
-
+    let i;
     for (i = 0; i < allMembers.length ; i++) {
       let tabId = allMembers[i].day + allMembers[i].time;
       if (tabId == id) {
         allMembers.splice(i, 1);
       }
     }
-
-    document.getElementById('delEvent').style.display = 'none'
+    document.getElementById('delEvent').style.display = 'none';    
   }
 }
 
